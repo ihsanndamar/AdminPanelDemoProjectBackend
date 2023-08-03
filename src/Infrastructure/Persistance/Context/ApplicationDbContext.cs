@@ -9,7 +9,7 @@ namespace Persistance.Context
         public DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
-            optionsBuilder.UseMySQL("server=localhost;database=database;user=user;password=password");
+            optionsBuilder.UseMySQL("Server=127.0.0.1;Port=3306;Database=paneldb;User=root;Password=admin;SslMode=Required;");
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
