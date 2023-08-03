@@ -31,11 +31,37 @@ namespace WebAPI.Controllers
         {
             var user = UserMapping.GetUser(userInputModel);
             await _userRepository.AddAsync(user);
+            return Ok(user);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(Guid id, [FromBody] UserInputModel userInputModel)
+        {
+            var user = await _userRepository.GetByIdAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            user.Username = userInputModel.Username;
+            user.Email = userInputModel.Email;
+            user.Password = userInputModel.Password;
+            await _userRepository.UpdateAsync(user);
+            return Ok(user);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var user = await _userRepository.GetByIdAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            
+            await _userRepository.DeleteAsync(id);
             return Ok();
         }
-        
-
-
 
         #endregion
     }
