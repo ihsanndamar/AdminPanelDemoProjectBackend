@@ -16,9 +16,9 @@ namespace WebAPI.Controllers
 
         #region CRUD Operations
         [HttpGet]
-        public Task<IActionResult> Get()
+        public async Task<IActionResult> Get()
         {
-            
+            return await Task.Run(() => Ok(_userRepository.GetAllAsync()));
         }
 
 
