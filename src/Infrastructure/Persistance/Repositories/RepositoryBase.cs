@@ -1,5 +1,6 @@
 ﻿using Application.Interfaces;
 using Domain.Common;
+using Microsoft.EntityFrameworkCore;
 using Persistance.Context;
 
 namespace Persistance.Repositories
@@ -14,29 +15,34 @@ namespace Persistance.Repositories
         }
 
 
-        public Task<T> AddAsync(T entity)
+        public async Task<T> AddAsync(T entity)
         {
-            throw new NotImplementedException();
+            _context.Set<T>().Add(entity);
+            _context.SaveChanges();
+            return entity;
         }
 
         public Task<T> DeleteAsync(Guid Id)
         {
             throw new NotImplementedException();
+
         }
 
-        public Task<IEnumerable<T>> GetAllAsync()
+        public async Task<IEnumerable<T>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _context.Set<T>().ToListAsync();
         }
 
-        public Task<T> GetByIdAsync(Guid Id)
+        public async Task<T> GetByIdAsync(Guid Id)
         {
-            throw new NotImplementedException();
+            return await _context.Set<T>().FindAsync(Id);
         }
 
-        public Task<T> UpdateAsync(T entity)
+        public async Task<T> UpdateAsync(T entity)
         {
-            throw new NotImplementedException();
+            _context.Set<T>().Update(entity);
+            await _context.SaveChangesAsync();
+            return entity;
         }
     }
 }
