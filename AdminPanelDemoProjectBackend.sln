@@ -7,17 +7,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4BEC8D5A-061
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{2E03E92A-E090-4203-857D-33EA7D3DE682}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\Core\Domain\Domain.csproj", "{8EAB133F-CBAF-4682-86C8-E15E107A797B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\Core\Domain\Domain.csproj", "{8EAB133F-CBAF-4682-86C8-E15E107A797B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "src\Core\Application\Application.csproj", "{AD2FD5C8-8DC1-4524-AA39-B5E38C4A4E2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "src\Core\Application\Application.csproj", "{AD2FD5C8-8DC1-4524-AA39-B5E38C4A4E2D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{B789210A-D8FE-40EE-9E51-27B06F24B143}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistance", "src\Infrastructure\Persistance\Persistance.csproj", "{29AAC88F-D727-45CD-AEE4-F418B3957924}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistance", "src\Infrastructure\Persistance\Persistance.csproj", "{29AAC88F-D727-45CD-AEE4-F418B3957924}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{2C8D6DDF-E44A-4E53-AE99-AFC8F924D54B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "src\Presentation\WebAPI\WebAPI.csproj", "{36D0DA75-F751-4636-8BBE-DD3448AAF389}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "src\Presentation\WebAPI\WebAPI.csproj", "{36D0DA75-F751-4636-8BBE-DD3448AAF389}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

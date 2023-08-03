@@ -13,7 +13,7 @@ namespace Persistence
         public static void AddPersistence(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseMySQL("server=localhost;database=aspnetcore;user=root;password=password;")
+                options.UseMySQL("Server=127.0.0.1;Port=3306;Database=paneldb;User=root;Password=admin;SslMode=Required;")
                 );
 
             services.AddTransient<IUserRepository, UserRepository>();

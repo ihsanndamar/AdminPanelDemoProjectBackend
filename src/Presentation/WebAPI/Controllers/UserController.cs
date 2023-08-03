@@ -1,5 +1,8 @@
-﻿using Application.Interfaces;
+﻿using Application.InputModels;
+using Application.Interfaces;
+using Application.Mapping;
 using Microsoft.AspNetCore.Mvc;
+using Application.Mapping;
 
 namespace WebAPI.Controllers
 {
@@ -18,9 +21,19 @@ namespace WebAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return await Task.Run(() => Ok(_userRepository.GetAllAsync()));
+            var users = await _userRepository.GetAllAsync();
+            var userViewModels = users.Select(UserMapping.GetUserViewModel);
+            return Ok(userViewModels);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] UserInputModel userInputModel)
+        {
+            var user = UserMapping.GetUser(userInputModel);
+            await _userRepository.AddAsync(user);
+            return Ok();
+        }
+        
 
 
 
