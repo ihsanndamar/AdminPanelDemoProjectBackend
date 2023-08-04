@@ -22,14 +22,14 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> Get()
         {
             var users = await _userRepository.GetAllAsync();
-            var userViewModels = users.Select(UserMapping.GetUserViewModel);
+            var userViewModels = users.Select(UserMapper.MapUserViewModel);
             return Ok(userViewModels);
         }
 
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] UserInputModel userInputModel)
         {
-            var user = UserMapping.GetUser(userInputModel);
+            var user = UserMapper.MapUser(userInputModel);
             await _userRepository.AddAsync(user);
             return Ok(user);
         }
