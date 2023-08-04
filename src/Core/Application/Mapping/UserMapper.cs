@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace Application.Mapping
 {
-    public class UserMapping
+    public class UserMapper
     {
         //user input model to user entity
         //user entity to user view model
 
-        public static User GetUser(UserInputModel userInputModel)
+        public static User MapUser(UserInputModel userInputModel)
         {
             return new User
             {
@@ -26,7 +26,7 @@ namespace Application.Mapping
             };
         }
 
-        public static UserViewModel GetUserViewModel(User user)
+        public static UserViewModel MapUserViewModel(User user)
         {
             return new UserViewModel
             {
