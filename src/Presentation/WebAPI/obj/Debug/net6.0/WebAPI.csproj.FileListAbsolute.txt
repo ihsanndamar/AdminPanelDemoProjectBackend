@@ -77,3 +77,6 @@ C:\Users\ihsan\Desktop\DemoProject-AdminPanel\AdminPanelDemoProjectBackend\src\P
 C:\Users\ihsan\Desktop\DemoProject-AdminPanel\AdminPanelDemoProjectBackend\src\Presentation\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\ihsan\Desktop\DemoProject-AdminPanel\AdminPanelDemoProjectBackend\src\Presentation\WebAPI\bin\Debug\net6.0\Persistance.dll
 C:\Users\ihsan\Desktop\DemoProject-AdminPanel\AdminPanelDemoProjectBackend\src\Presentation\WebAPI\bin\Debug\net6.0\Persistance.pdb
+C:\Users\ihsan\Desktop\DemoProject-AdminPanel\AdminPanelDemoProjectBackend\src\Presentation\WebAPI\bin\Debug\net6.0\AWSSDK.Core.dll
+C:\Users\ihsan\Desktop\DemoProject-AdminPanel\AdminPanelDemoProjectBackend\src\Presentation\WebAPI\bin\Debug\net6.0\AWSSDK.DynamoDBv2.dll
+C:\Users\ihsan\Desktop\DemoProject-AdminPanel\AdminPanelDemoProjectBackend\src\Presentation\WebAPI\bin\Debug\net6.0\AWSSDK.Extensions.NETCore.Setup.dll

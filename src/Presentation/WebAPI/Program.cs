@@ -1,4 +1,7 @@
+using Amazon.DynamoDBv2.DataModel;
+using Amazon.DynamoDBv2;
 using Persistence;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,8 +11,13 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
 builder.Services.AddPersistence(builder.Configuration);
+
+
+//aws dynamodb
+builder.Services.AddDefaultAWSOptions(builder.Configuration.GetAWSOptions());
+builder.Services.AddAWSService<IAmazonDynamoDB>();
+builder.Services.AddScoped<IDynamoDBContext, DynamoDBContext>();
 
 var app = builder.Build();
 
@@ -26,6 +34,9 @@ app.UseCors(options =>
     .AllowAnyMethod()
     .AllowAnyHeader()
 );
+
+
+
 
 app.UseHttpsRedirection();
 

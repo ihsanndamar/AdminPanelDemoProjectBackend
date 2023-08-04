@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "UYzK2JHZhS76LaDahnvE2MAwg3RCeXfPgn+/FuDbDf0g0CEY6k7hqkH1l+r+6Jr1xbLY1yiGBqjhqEC8V4TEAA==",
+  "dgSpecHash": "P9KYn0RoHTIrJ2btKqu9CDFfXCFUpCvHU+K/+3Oa+qehwCycJsLKhKUFBDNpj700ndJ2RHnvwu3J+5DeyOGg/A==",
   "success": true,
   "projectFilePath": "C:\\Users\\ihsan\\Desktop\\DemoProject-AdminPanel\\AdminPanelDemoProjectBackend\\src\\Infrastructure\\Persistance\\Persistance.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ihsan\\.nuget\\packages\\awssdk.core\\3.7.200.9\\awssdk.core.3.7.200.9.nupkg.sha512",
+    "C:\\Users\\ihsan\\.nuget\\packages\\awssdk.dynamodbv2\\3.7.200.10\\awssdk.dynamodbv2.3.7.200.10.nupkg.sha512",
+    "C:\\Users\\ihsan\\.nuget\\packages\\awssdk.extensions.netcore.setup\\3.7.7\\awssdk.extensions.netcore.setup.3.7.7.nupkg.sha512",
     "C:\\Users\\ihsan\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\ihsan\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\ihsan\\.nuget\\packages\\k4os.compression.lz4\\1.3.5\\k4os.compression.lz4.1.3.5.nupkg.sha512",

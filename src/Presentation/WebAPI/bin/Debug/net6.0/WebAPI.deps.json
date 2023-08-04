@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "WebAPI/1.0.0": {
         "dependencies": {
+          "AWSSDK.Extensions.NETCore.Setup": "3.7.7",
           "Application": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "7.0.9",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.9",
@@ -16,6 +17,39 @@
         },
         "runtime": {
           "WebAPI.dll": {}
+        }
+      },
+      "AWSSDK.Core/3.7.200.9": {
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.200.9"
+          }
+        }
+      },
+      "AWSSDK.DynamoDBv2/3.7.200.10": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.200.9"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.DynamoDBv2.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.200.10"
+          }
+        }
+      },
+      "AWSSDK.Extensions.NETCore.Setup/3.7.7": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.200.9",
+          "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.7.0"
+          }
         }
       },
       "Google.Protobuf/3.21.9": {
@@ -607,6 +641,10 @@
         }
       },
       "Domain/1.0.0": {
+        "dependencies": {
+          "AWSSDK.DynamoDBv2": "3.7.200.10",
+          "AWSSDK.Extensions.NETCore.Setup": "3.7.7"
+        },
         "runtime": {
           "Domain.dll": {}
         }
@@ -630,6 +668,27 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AWSSDK.Core/3.7.200.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1UP2774Rv3n8UoAb0RoY3sj7GmpaTPyOcveCWas/gIKGFHyl+vSgetgcp9n00zOju9rGASlCNwOvnsVtOHpR6g==",
+      "path": "awssdk.core/3.7.200.9",
+      "hashPath": "awssdk.core.3.7.200.9.nupkg.sha512"
+    },
+    "AWSSDK.DynamoDBv2/3.7.200.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/UqiFAfh+X0+Dfwt+YcI4rq1HHkGhpzi1G8C72LFLvf9/wNzzMT5sAkTAcJqBdviALaLGoIbwpOREl42l8X4Vg==",
+      "path": "awssdk.dynamodbv2/3.7.200.10",
+      "hashPath": "awssdk.dynamodbv2.3.7.200.10.nupkg.sha512"
+    },
+    "AWSSDK.Extensions.NETCore.Setup/3.7.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jz7BRX6pUVJqvULIfdMdG2apcI1loh4kodyM/9ypHdlTers0OlPVshPBpUVA8WsSygIVa5evU8tZk4SdbSRCDg==",
+      "path": "awssdk.extensions.netcore.setup/3.7.7",
+      "hashPath": "awssdk.extensions.netcore.setup.3.7.7.nupkg.sha512"
     },
     "Google.Protobuf/3.21.9": {
       "type": "package",

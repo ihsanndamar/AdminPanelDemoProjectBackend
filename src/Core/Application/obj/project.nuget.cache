@@ -1,8 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "FZWfWNs54BDuLMmwiIwWFexWUQrblgq/gzkPnoBb/MbZ6Yp4o7zyFp1P3bMksiltMDMNdxHnaxI0ybARCagdTA==",
+  "dgSpecHash": "SVl6AIYkNflIUZUaWuRZtSTHFSx1cxVd8+W3ASTyJudAx2R0rGh1b452FO2bTx642PurXaQNzvLCFNaTtYesfg==",
   "success": true,
   "projectFilePath": "C:\\Users\\ihsan\\Desktop\\DemoProject-AdminPanel\\AdminPanelDemoProjectBackend\\src\\Core\\Application\\Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ihsan\\.nuget\\packages\\awssdk.core\\3.7.200.9\\awssdk.core.3.7.200.9.nupkg.sha512",
+    "C:\\Users\\ihsan\\.nuget\\packages\\awssdk.dynamodbv2\\3.7.200.10\\awssdk.dynamodbv2.3.7.200.10.nupkg.sha512",
+    "C:\\Users\\ihsan\\.nuget\\packages\\awssdk.extensions.netcore.setup\\3.7.7\\awssdk.extensions.netcore.setup.3.7.7.nupkg.sha512",
+    "C:\\Users\\ihsan\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\2.0.0\\microsoft.extensions.configuration.abstractions.2.0.0.nupkg.sha512",
+    "C:\\Users\\ihsan\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.0.0\\microsoft.extensions.dependencyinjection.abstractions.2.0.0.nupkg.sha512",
+    "C:\\Users\\ihsan\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.0.0\\microsoft.extensions.logging.abstractions.2.0.0.nupkg.sha512",
+    "C:\\Users\\ihsan\\.nuget\\packages\\microsoft.extensions.primitives\\2.0.0\\microsoft.extensions.primitives.2.0.0.nupkg.sha512",
+    "C:\\Users\\ihsan\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.4.0\\system.runtime.compilerservices.unsafe.4.4.0.nupkg.sha512"
+  ],
   "logs": []
 }
