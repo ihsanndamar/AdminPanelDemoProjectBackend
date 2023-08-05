@@ -60,6 +60,18 @@ namespace WebAPI.Controllers
             return Ok();
         }
 
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(Guid id)
+        {
+            var user = await _userRepository.GetByIdAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            var userViewModel = UserMapper.MapUserViewModel(user);
+            return Ok(userViewModel);
+        }
+
         #endregion
     }
 }

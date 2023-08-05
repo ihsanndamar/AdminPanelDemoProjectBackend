@@ -1,6 +1,7 @@
 ﻿using Amazon.DynamoDBv2.DataModel;
 using Application.InputModels;
 using Application.Mapping;
+using Application.Validators;
 using Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -30,6 +31,15 @@ namespace WebAPI.Controllers
         public IActionResult Post([FromBody] BuildingInputModel buildingInputModel)
         {
             var building = BuildingMapper.MapBuilding(buildingInputModel);
+
+            //check validation
+            var buildingValidator = new BuildingValidator();
+            var validationResult = buildingValidator.Validate(building);
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors);
+            }
+
             _dynamoDBContext.SaveAsync(building);
             return Ok("Created Successfully");
         }
@@ -54,6 +64,16 @@ namespace WebAPI.Controllers
             return Ok("Deleted Successfully");
         }
 
-
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(Guid id)
+        {
+            var building = await _dynamoDBContext.LoadAsync<Building>(id);
+            if (building == null)
+            {
+                return NotFound("Building not found");
+            }
+            var buildingViewModel = BuildingMapper.MapBuildingViewModel(building);
+            return Ok(buildingViewModel);
+        }
     }
 }

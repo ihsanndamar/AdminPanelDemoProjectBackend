@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "P9KYn0RoHTIrJ2btKqu9CDFfXCFUpCvHU+K/+3Oa+qehwCycJsLKhKUFBDNpj700ndJ2RHnvwu3J+5DeyOGg/A==",
+  "dgSpecHash": "m9s9BN5A/VvfXhOdwQbcEGSwwR3RfBB8VbjIlGYNKyAuBsQNKDPGmv0c83L54i61Yl/kgo8Oq0Sj88P8gWQPfA==",
   "success": true,
   "projectFilePath": "C:\\Users\\ihsan\\Desktop\\DemoProject-AdminPanel\\AdminPanelDemoProjectBackend\\src\\Infrastructure\\Persistance\\Persistance.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ihsan\\.nuget\\packages\\awssdk.core\\3.7.200.9\\awssdk.core.3.7.200.9.nupkg.sha512",
     "C:\\Users\\ihsan\\.nuget\\packages\\awssdk.dynamodbv2\\3.7.200.10\\awssdk.dynamodbv2.3.7.200.10.nupkg.sha512",
     "C:\\Users\\ihsan\\.nuget\\packages\\awssdk.extensions.netcore.setup\\3.7.7\\awssdk.extensions.netcore.setup.3.7.7.nupkg.sha512",
+    "C:\\Users\\ihsan\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
+    "C:\\Users\\ihsan\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\ihsan\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\ihsan\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\ihsan\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\ihsan\\.nuget\\packages\\k4os.compression.lz4\\1.3.5\\k4os.compression.lz4.1.3.5.nupkg.sha512",
