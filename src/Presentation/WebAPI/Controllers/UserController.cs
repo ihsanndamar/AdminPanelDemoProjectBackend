@@ -34,18 +34,15 @@ namespace WebAPI.Controllers
             return Ok(user);
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Put(Guid id, [FromBody] UserInputModel userInputModel)
+        [HttpPut]
+        public async Task<IActionResult> Put([FromBody] UserInputModel userInputModel)
         {
-            var user = await _userRepository.GetByIdAsync(id);
+            var user = await _userRepository.GetByIdAsync(userInputModel.Id.Value);
             if (user == null)
             {
                 return NotFound();
             }
-
-            user.Username = userInputModel.Username;
-            user.Email = userInputModel.Email;
-            user.Password = userInputModel.Password;
+            user = UserMapper.MapUser(userInputModel);
             await _userRepository.UpdateAsync(user);
             return Ok(user);
         }

@@ -16,7 +16,7 @@ namespace Application.Mapping
         {
             return new Building
             {
-                Id = Guid.NewGuid(),
+                Id = buildingInputModel.Id.HasValue ? buildingInputModel.Id.Value : Guid.NewGuid(),
                 BuildingType = buildingInputModel.BuildingType,
                 BuildingCost = buildingInputModel.BuildingCost,
                 ConstructionTime = buildingInputModel.ConstructionTime

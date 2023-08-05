@@ -18,7 +18,7 @@ namespace Application.Mapping
         {
             return new User
             {
-                Id = new Guid(),
+                Id = userInputModel.Id.HasValue ? userInputModel.Id.Value : Guid.NewGuid(),
                 Username = userInputModel.Username,
                 Email = userInputModel.Email,
                 Password = userInputModel.Password,
