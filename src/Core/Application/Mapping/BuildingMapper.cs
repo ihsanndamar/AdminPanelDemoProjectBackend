@@ -12,16 +12,31 @@ namespace Application.Mapping
     public class BuildingMapper
     {
 
-        public static Building MapBuilding(BuildingInputModel buildingInputModel)
+        public static Building MapBuilding(BuildingInputModel buildingInputModel, Guid? id = null)
         {
-            return new Building
+            if(id==null)
             {
-                Id = buildingInputModel.Id.HasValue ? buildingInputModel.Id.Value : Guid.NewGuid(),
-                BuildingType = buildingInputModel.BuildingType,
-                BuildingCost = buildingInputModel.BuildingCost,
-                ConstructionTime = buildingInputModel.ConstructionTime
-            };
+                return new Building
+                {
+                    Id = Guid.NewGuid(),
+                    BuildingType = buildingInputModel.BuildingType,
+                    BuildingCost = buildingInputModel.BuildingCost,
+                    ConstructionTime = buildingInputModel.ConstructionTime,
+                };
+            }
+            else
+            {
+                return new Building
+                {
+                    Id = id.Value,
+                    BuildingType = buildingInputModel.BuildingType,
+                    BuildingCost = buildingInputModel.BuildingCost,
+                    ConstructionTime = buildingInputModel.ConstructionTime
+                };
+            }
         }
+            
+        
 
         public static BuildingViewModel MapBuildingViewModel(Building building)
         {

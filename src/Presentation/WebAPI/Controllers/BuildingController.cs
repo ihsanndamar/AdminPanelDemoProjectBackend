@@ -44,15 +44,15 @@ namespace WebAPI.Controllers
             return Ok("Created Successfully");
         }
 
-        [HttpPut]
-        public async Task<IActionResult> Put([FromBody] BuildingInputModel buildingInputModel)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put([FromBody] BuildingInputModel buildingInputModel, Guid id)
         {
-            var building = await _dynamoDBContext.LoadAsync<Building>(buildingInputModel.Id);
+            var building = await _dynamoDBContext.LoadAsync<Building>(id);
             if (building == null)
             {
                 return NotFound("Building not found");
             }
-            building = BuildingMapper.MapBuilding(buildingInputModel);
+            building = BuildingMapper.MapBuilding(buildingInputModel, id);
             await _dynamoDBContext.SaveAsync(building);
             return Ok("Updated Successfully");
         }

@@ -2,7 +2,7 @@
 using Application.Interfaces;
 using Application.Mapping;
 using Microsoft.AspNetCore.Mvc;
-using Application.Mapping;
+
 
 namespace WebAPI.Controllers
 {
@@ -64,6 +64,20 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> GetById(Guid id)
         {
             var user = await _userRepository.GetByIdAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            var userViewModel = UserMapper.MapUserViewModel(user);
+            return Ok(userViewModel);
+        }
+
+        [HttpPost]
+        [Route("/Login")]
+        public async Task<IActionResult> Login([FromBody]LoginInputModel inputModel)
+        {
+            var users = await _userRepository.GetAllAsync();
+            var user = users.FirstOrDefault(u => u.Username == inputModel.Username && u.Password == inputModel.Password);
             if (user == null)
             {
                 return NotFound();
