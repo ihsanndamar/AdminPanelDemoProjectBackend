@@ -38,7 +38,7 @@ if (app.Environment.IsDevelopment())
 
 //cors policy for react app
 app.UseCors(options =>
-    options.WithOrigins("http://localhost:3000")
+    options.WithOrigins("http://0.0.0.0:7015")
     .AllowAnyMethod()
     .AllowAnyHeader()
 );
