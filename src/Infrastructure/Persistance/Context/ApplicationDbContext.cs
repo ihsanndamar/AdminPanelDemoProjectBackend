@@ -12,8 +12,8 @@ namespace Persistance.Context
         public DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
-            optionsBuilder.UseMySQL("Server=demeserver.mysql.database.azure.com;Port=3306;Database=paneldb;Username=ihsan;Password=password!1;SslMode=Required;");
-
+            optionsBuilder.UseMySQL("Server=demeserver.mysql.database.azure.com;Port=3306;Database=paneldb;Username=ihsan;Password=password!1;");
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().ToTable("Users");
