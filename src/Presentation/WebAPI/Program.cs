@@ -38,7 +38,7 @@ if (app.Environment.IsDevelopment())
 
 //cors policy for react app
 app.UseCors(options =>
-    options.WithOrigins("http://0.0.0.0:7015")
+    options.WithOrigins("http://localhost:3000", "https://*.amplifyapp.com", "https://*.github.io", "https://*.amazonaws.com", "https://*.amazonaws.com/*", "http://0.0.0.0:7015")
     .AllowAnyMethod()
     .AllowAnyHeader()
 );
