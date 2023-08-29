@@ -1,6 +1,6 @@
 ﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-
+using System.Configuration;
 
 namespace Persistance.Context
 {
@@ -11,8 +11,10 @@ namespace Persistance.Context
         }
         public DbSet<User> Users { get; set; }
 
+        string conStr = ConfigurationManager.AppSettings["ConnectionString"];
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
-            optionsBuilder.UseMySQL("Server=test.czhqy4et8tob.eu-north-1.rds.amazonaws.com;Port=3306;Username=test;Password=1029384756;Database=paneldb;");
+            optionsBuilder.UseMySQL(conStr);
         
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -21,6 +21,12 @@ builder.Services.AddDefaultAWSOptions(builder.Configuration.GetAWSOptions());
 builder.Services.AddAWSService<IAmazonDynamoDB>();
 builder.Services.AddScoped<IDynamoDBContext, DynamoDBContext>();
 
+//connection string
+//builder.Services.AddDbContext<ApplicationDbContext>(options =>
+//{
+//    options.UseMySQL(builder.Configuration.GetConnectionString("ConnectionString"));
+//});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -42,6 +48,7 @@ app.UseCors(options =>
     .AllowAnyMethod()
     .AllowAnyHeader()
 );
+
 
 
 
