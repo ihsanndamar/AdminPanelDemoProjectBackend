@@ -11,10 +11,7 @@ namespace Persistance.Context
         }
         public DbSet<User> Users { get; set; }
 
-        string conStr = ConfigurationManager.AppSettings["ConnectionString"];
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
-            optionsBuilder.UseMySQL(conStr);
         
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

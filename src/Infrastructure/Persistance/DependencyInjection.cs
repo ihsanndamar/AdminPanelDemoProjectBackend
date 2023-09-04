@@ -12,8 +12,9 @@ namespace Persistence
     {
         public static void AddPersistence(this IServiceCollection services, IConfiguration configuration)
         {
+            string connstr = configuration["ConnectionString"];
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseMySQL("Server=127.0.0.1;Port=3306;Database=paneldb;User=root;Password=admin;SslMode=Required;")
+                options.UseMySQL(connstr)
                 );
 
             services.AddTransient<IUserRepository, UserRepository>();
