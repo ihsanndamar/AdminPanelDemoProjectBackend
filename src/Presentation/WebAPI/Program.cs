@@ -3,6 +3,9 @@ using Amazon.DynamoDBv2;
 using Persistence;
 using Persistance.Context;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +17,29 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddPersistence(builder.Configuration);
+
+
+//jwt authentication
+builder.Services.AddAuthentication(x =>
+{
+    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(o =>
+    {
+        var Key = Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"]);
+        o.SaveToken = true;
+        o.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["JWT:Issuer"],
+            ValidAudience = builder.Configuration["JWT:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Key)
+        };
+    });
 
 
 //aws dynamodb
@@ -50,10 +76,11 @@ app.UseCors(options =>
 );
 
 
+//jwt authentication 
+app.UseAuthentication(); // This need to be added	
+app.UseAuthorization();
 
 
-
-app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
